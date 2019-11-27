@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class DatabaseHandler {
     int ui;
@@ -15,10 +16,6 @@ public class DatabaseHandler {
 
 
 
-    public static int updateUI(int ui){
-        return ui;
-
-    }
 
 
   /*  Create a new createAccount method which takes
