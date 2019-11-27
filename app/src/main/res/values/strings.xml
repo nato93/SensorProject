@@ -10,9 +10,9 @@
     <string name="mTempView">Temperature</string>
     <string name="mHumidView">Humidity</string>
 
-    <string name="mCoInput">the CO input</string>
-    <string name="mTempInput">the Temperature input</string>
-    <string name="mHumidInput">the Humidity input</string>
+    <string name="mCoInput"></string>
+    <string name="mTempInput"></string>
+    <string name="mHumidInput"></string>
 
 
 </resources>
