@@ -19,14 +19,14 @@
             android:gravity="center|center_vertical"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            tools:text="@string/mRoomView" />
+            android:text="@string/mRoomView" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/mCoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:gravity="center|center_horizontal"
         android:text="@string/mCoView"
         android:textSize="36sp" />
@@ -43,7 +43,7 @@
         android:id="@+id/mTempView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:gravity="center|center_horizontal"
         android:text="@string/mTempView"
         android:textSize="36sp" />
@@ -60,7 +60,7 @@
         android:id="@+id/mHumidView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:gravity="center|center_horizontal"
         android:text="@string/mHumidView"
         android:textSize="36sp" />
