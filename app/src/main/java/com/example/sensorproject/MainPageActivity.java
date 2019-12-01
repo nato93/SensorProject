@@ -16,10 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainPageActivity extends AppCompatActivity {
     private TextView CoInput, TemperatureInput, HumidityInput;
-    private Button showButton;
     DatabaseReference reff;
-
-
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -30,41 +27,24 @@ public class MainPageActivity extends AppCompatActivity {
         CoInput = findViewById(R.id.mCoInput);
         TemperatureInput = findViewById(R.id.mTempInput);
         HumidityInput = findViewById(R.id.mHumidInput);
-        showButton = findViewById(R.id.mShowButton);
 
-        showButton.setOnClickListener(new View.OnClickListener() {
+
+        reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
-                reff.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String co=dataSnapshot.child("co").getValue().toString();
-                        String temperature=dataSnapshot.child("temperature").getValue().toString();
-                        String humidity=dataSnapshot.child("humidity").getValue().toString();
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String co=dataSnapshot.child("co").getValue().toString();
+                String temperature=dataSnapshot.child("temperature").getValue().toString();
+                String humidity=dataSnapshot.child("humidity").getValue().toString();
+                CoInput.setText(co);
+                TemperatureInput.setText(temperature);
+                HumidityInput.setText(humidity);
+                //   mBook.setText(books);
+            }
 
-                        CoInput.setText(co);
-                        TemperatureInput.setText(temperature);
-                        HumidityInput.setText(humidity);
-                        //   mBook.setText(books);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-
-
-
-
-
     }
-
-
-
-
 }

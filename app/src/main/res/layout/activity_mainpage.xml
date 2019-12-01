@@ -1,55 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mRoomView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|center_vertical"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            tools:text="@string/mRoomView" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/mCoView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mCoView" />
+        android:layout_marginTop="100dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/mCoView"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/mCoInput"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mCoInput" />
+        android:text="@string/mCoInput"
+        android:gravity="center|center_horizontal"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/mTempView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mTempView" />
+        android:layout_marginTop="100dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/mTempView"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/mTempInput"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center|center_horizontal"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mTempInput" />
+        android:text="@string/mTempInput"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/mHumidView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mHumidView" />
+        android:layout_marginTop="100dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/mHumidView"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/mHumidInput"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
-        tools:text="@string/mHumidInput" />
-
-    <Button
-        android:id="@+id/mShowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="@string/mShowButton" />
+        android:gravity="center|center_horizontal"
+        android:text="@string/mHumidInput"
+        android:textSize="36sp" />
 
 </LinearLayout>

@@ -21,18 +21,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
 /**
  * when initializing your Activity,
  check to see if the user is currently signed in.
 **/
 
-    @Override
+
+
+/*   @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //DatabaseHandler.updateUI(currentUser);
-    }
+        DatabaseHandler.updateUI(currentUser);
+    }*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +52,25 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        //mAuth = FirebaseAuth.getInstance();
 
         // Write a message to the database
+
+/*
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("https://sensorproject-876ad.firebaseio.com/");
 
         myRef.setValue("its fucking working with firebase");
+*/
+
 
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainPageActivity.class));
-
+                Intent newscr = new Intent(MainActivity.this, MainPageActivity.class);
+                startActivity(newscr);
             }
         });
 
@@ -84,3 +92,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
