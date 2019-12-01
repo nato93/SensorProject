@@ -11,6 +11,7 @@
         android:ems="10"
         android:hint="Username/ Email"
         android:inputType="textEmailAddress"
+        android:text="@string/mUsername"
         tools:text="@string/mUsername" />
 
     <EditText
@@ -20,25 +21,28 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textEmailAddress"
+        android:text="@string/mPassword"
         tools:text="@string/mPassword" />
 
     <Button
         android:id="@+id/mLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/mLoginButton"
         tools:text="@string/mLoginButton" />
 
     <Button
         android:id="@+id/mSignUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/mSignUpButton"
         tools:text="@string/mSignUpButton" />
 
     <Button
         android:id="@+id/mForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/mForgotPassword"
         tools:text="@string/mForgotPassword" />
 
 </LinearLayout>

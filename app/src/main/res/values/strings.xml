@@ -15,4 +15,7 @@
     <string name="mHumidInput"></string>
 
 
+    <string name="mShowButton">Show</string>
+
+
 </resources>

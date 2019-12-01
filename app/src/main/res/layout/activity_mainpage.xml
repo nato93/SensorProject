@@ -46,4 +46,10 @@
         android:textSize="36sp"
         tools:text="@string/mHumidInput" />
 
+    <Button
+        android:id="@+id/mShowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/mShowButton" />
+
 </LinearLayout>
