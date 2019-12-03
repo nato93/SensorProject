@@ -1,68 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/logoView"
-        android:layout_width="466dp"
-        android:layout_height="396dp"
-        android:layout_gravity="center|center_horizontal|center_vertical"
-        android:layout_marginTop="60dp"
-        android:contentDescription="@string/logoView"
-        app:srcCompat="@drawable/logo" />
-
-    <EditText
-        android:id="@+id/mPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textEmailAddress"
-        android:text="@string/mPassword"
-        tools:text="@string/mPassword" />
 
     <EditText
         android:id="@+id/mUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
+        android:layout_below="@+id/mLogoView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="no"
         android:ems="10"
-        android:hint="Username/ Email"
-        android:inputType="textEmailAddress"
-        android:text="@string/mUsername"
-        tools:text="@string/mUsername" />
 
-    <Button
-        android:id="@+id/mForgotPassword"
+        android:hint="@string/mUsername"
+        android:inputType="textPersonName"
+        android:textColor="#3587c7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/mPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/mForgotPassword"
-        tools:text="@string/mForgotPassword" />
+        android:layout_below="@+id/mUsername"
 
-    <Button
-        android:id="@+id/mSignUpButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/mPassword"
+
+        android:inputType="textPassword"
+        android:textColor="#3587c7"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/mForgotPasswordLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        android:text="@string/mSignUpButton"
-        tools:text="@string/mSignUpButton" />
+        android:layout_below="@+id/mPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:text="@string/mForgotPasswordLink"
+        android:textColor="#3587c7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mLoginRememberCheckBox" />
 
     <Button
         android:id="@+id/mLoginButton"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mForgotPasswordLink"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginRight="101dp"
+        android:background="#3587c7"
+        android:gravity="center"
+        android:text="@string/mLoginButton"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mPassword" />
+
+    <ImageView
+        android:id="@+id/mLogoView"
+        android:layout_width="206dp"
+        android:layout_height="190dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+
+        android:contentDescription="@string/logoView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:srcCompat="@drawable/logo" />
+
+    <CheckBox
+        android:id="@+id/mLoginRememberCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/mLoginButton"
-        tools:text="@string/mLoginButton" />
+        android:layout_below="@+id/mLoginButton"
+        android:layout_centerHorizontal="true"
 
-</LinearLayout>
+        android:layout_marginTop="5dp"
+        android:text="@string/mLoginRememberCheckBox"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mSignUpLink"
+        app:layout_constraintVertical_bias="0.093" />
+
+    <TextView
+        android:id="@+id/mSignUpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mLoginRememberCheckBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/mSignUpLink"
+        android:textColor="#3587c7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mLoginButton" />
+
+</RelativeLayout>

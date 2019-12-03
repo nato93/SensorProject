@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">SensorProject</string>
-    <string name="mUsername"></string>
-    <string name="mPassword"></string>
+    <string name="mUsername">Username</string>
+    <string name="mPassword">Password</string>
 
     <string name="mLoginButton">Login</string>
-    <string name="mSignUpButton">Sign up</string>
-    <string name="mForgotPassword">Forgot password</string>
+
+
+
+    <string name="mSignUpLink">Sign up</string>
+    <string name="mForgotPasswordLink">Forgot password</string>
+    <string name="mLoginRememberCheckBox">Remember me</string>
 
     <string name="mCoView">CO</string>
     <string name="mTempView">Temperature</string>

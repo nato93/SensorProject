@@ -1,5 +1,4 @@
 package com.example.sensorproject;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText username, password;
-    private Button loginButton, signUpButton, forgotPassword;
+    private Button loginButton;
+    private TextView signUpButton, forgotPassword;
 
 
 
@@ -47,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.mUsername);
         password = findViewById(R.id.mPassword);
         loginButton = findViewById(R.id.mLoginButton);
-        signUpButton = findViewById(R.id.mSignUpButton);
-        forgotPassword = findViewById(R.id.mForgotPassword);
+        signUpButton = findViewById(R.id.mSignUpLink);
+        forgotPassword = findViewById(R.id.mForgotPasswordLink);
 
 
         // Initialize Firebase Auth
