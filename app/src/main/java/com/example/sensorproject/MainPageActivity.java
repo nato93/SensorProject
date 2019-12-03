@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainPageActivity extends AppCompatActivity {
-    private TextView CoInput, TemperatureInput, HumidityInput;
+    private TextView CoInput, TemperatureInput, HumidityInput, RoomView;
     DatabaseReference reff;
 
     @Override
@@ -27,6 +27,7 @@ public class MainPageActivity extends AppCompatActivity {
         CoInput = findViewById(R.id.mCoInput);
         TemperatureInput = findViewById(R.id.mTempInput);
         HumidityInput = findViewById(R.id.mHumidInput);
+        RoomView = findViewById(R.id.mRoomView);
 
 
         reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
@@ -36,9 +37,11 @@ public class MainPageActivity extends AppCompatActivity {
                 String co=dataSnapshot.child("co").getValue().toString();
                 String temperature=dataSnapshot.child("temperature").getValue().toString();
                 String humidity=dataSnapshot.child("humidity").getValue().toString();
+                String room=dataSnapshot.child("room").getValue().toString();
                 CoInput.setText(co);
                 TemperatureInput.setText(temperature);
                 HumidityInput.setText(humidity);
+                RoomView.setText(room);
                 //   mBook.setText(books);
             }
 

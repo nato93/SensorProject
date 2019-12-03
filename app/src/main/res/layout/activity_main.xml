@@ -1,48 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/mUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Username/ Email"
-        android:inputType="textEmailAddress"
-        android:text="@string/mUsername"
-        tools:text="@string/mUsername" />
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="466dp"
+        android:layout_height="396dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/logoView"
+        app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/mPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textEmailAddress"
         android:text="@string/mPassword"
         tools:text="@string/mPassword" />
 
-    <Button
-        android:id="@+id/mLoginButton"
+    <EditText
+        android:id="@+id/mUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mLoginButton"
-        tools:text="@string/mLoginButton" />
-
-    <Button
-        android:id="@+id/mSignUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mSignUpButton"
-        tools:text="@string/mSignUpButton" />
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:ems="10"
+        android:hint="Username/ Email"
+        android:inputType="textEmailAddress"
+        android:text="@string/mUsername"
+        tools:text="@string/mUsername" />
 
     <Button
         android:id="@+id/mForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/mForgotPassword"
         tools:text="@string/mForgotPassword" />
+
+    <Button
+        android:id="@+id/mSignUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:text="@string/mSignUpButton"
+        tools:text="@string/mSignUpButton" />
+
+    <Button
+        android:id="@+id/mLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/mLoginButton"
+        tools:text="@string/mLoginButton" />
 
 </LinearLayout>

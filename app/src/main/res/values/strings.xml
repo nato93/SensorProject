@@ -2,6 +2,7 @@
     <string name="app_name">SensorProject</string>
     <string name="mUsername"></string>
     <string name="mPassword"></string>
+
     <string name="mLoginButton">Login</string>
     <string name="mSignUpButton">Sign up</string>
     <string name="mForgotPassword">Forgot password</string>
@@ -17,6 +18,7 @@
 
     <string name="mShowButton">Show</string>
     <string name="mRoomView">Room 3.136</string>
+    <string name="logoView"></string>
 
 
 </resources>
