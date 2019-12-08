@@ -39,7 +39,7 @@
         android:id="@+id/mCoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="20sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mCoView"
         android:textSize="18sp" />
@@ -49,7 +49,6 @@
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_gravity="center"
-        android:layout_margin="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,34 +72,67 @@
         android:id="@+id/mTempView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="5sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mTempView"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/mTempInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|center_horizontal"
-        android:text="@string/mTempInput"
-        android:textSize="18sp" />
+    <com.ntt.customgaugeview.library.GaugeView
+        android:id="@+id/gv_temp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:divisions="10"
+        gauge:rangeValues="@array/ranges"
+        gauge:scaleEndValue="100"
+        gauge:showInnerRim="false"
+        gauge:showNeedle="true"
+        gauge:showOuterBorder="false"
+        gauge:showOuterRim="true"
+        gauge:showOuterShadow="false"
+        gauge:showRangeText="true"
+        gauge:showRanges="true"
+        gauge:showScale="true"
+        gauge:subdivisions="1"
+        gauge:textValueSize="0.15" />
+
 
     <TextView
         android:id="@+id/mHumidView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="5sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mHumidView"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/mHumidInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|center_horizontal"
-        android:text="@string/mHumidInput"
-        android:textSize="18sp" />
+    <com.ntt.customgaugeview.library.GaugeView
+        android:id="@+id/gv_humid"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:divisions="10"
+        gauge:rangeValues="@array/ranges"
+        gauge:scaleEndValue="100"
+        gauge:showInnerRim="false"
+        gauge:showNeedle="true"
+        gauge:showOuterBorder="false"
+        gauge:showOuterRim="true"
+        gauge:showOuterShadow="false"
+        gauge:showRangeText="true"
+        gauge:showRanges="true"
+        gauge:showScale="true"
+        gauge:subdivisions="1"
+        gauge:textValueSize="0.15" />
+
+
 
 </LinearLayout>

@@ -2,9 +2,7 @@ package com.example.sensorproject;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.ntt.customgaugeview.library.GaugeView;
 
 public class MainPageActivity extends AppCompatActivity {
-    private TextView CoInput, TemperatureInput, HumidityInput, RoomView;
+    private TextView RoomView;
     DatabaseReference reff;
 
     @Override
@@ -27,17 +25,30 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
-        Spinner mySpinner = (Spinner) findViewById(R.id.spinner1);
+        Spinner mySpinner = findViewById(R.id.spinner1);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainPageActivity.this,
         android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.roomList));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
         // the gauge
-        final GaugeView gv_co = (GaugeView) findViewById(R.id.gv_co);
+        final GaugeView mGv_co = findViewById(R.id.gv_co);
+        final GaugeView mGv_temp = findViewById(R.id.gv_humid);
+        final GaugeView mGv_humid = findViewById(R.id.gv_temp);
+        RoomView = findViewById(R.id.mRoomView);
 
-        gv_co.setShowRangeValues(true);
-        gv_co.setTargetValue(0);
+
+        mGv_co.setShowRangeValues(true);
+        mGv_co.setTargetValue(0);
+
+        mGv_humid.setShowRangeValues(true);
+        mGv_humid.setTargetValue(0);
+
+        mGv_temp.setShowRangeValues(true);
+        mGv_temp.setTargetValue(0);
+
+
+/*
         CountDownTimer timer = new CountDownTimer(10000, 2) {
 
 
@@ -54,26 +65,32 @@ public class MainPageActivity extends AppCompatActivity {
             }
         };
         //timer.start();
+*/
 
 
-        TemperatureInput = findViewById(R.id.mTempInput);
-        HumidityInput = findViewById(R.id.mHumidInput);
-        RoomView = findViewById(R.id.mRoomView);
 
 
         reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
         reff.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String co=dataSnapshot.child("co").getValue().toString();
-                String temperature=dataSnapshot.child("temperature").getValue().toString();
-                String humidity=dataSnapshot.child("humidity").getValue().toString();
-                String room=dataSnapshot.child("room").getValue().toString();
-                gv_co.setTargetValue(Float.parseFloat(co));
-                //CoInput.setText(co);
-                TemperatureInput.setText(temperature);
-                HumidityInput.setText(humidity);
-                RoomView.setText(room);
+
+                try {
+                    String co = dataSnapshot.child("co").getValue().toString();
+                    String temperature = dataSnapshot.child("temperature").getValue().toString();
+                    String humidity = dataSnapshot.child("humidity").getValue().toString();
+                    String room = dataSnapshot.child("room").getValue().toString();
+                    mGv_co.setTargetValue(Float.parseFloat(co));
+                    mGv_temp.setTargetValue(Float.parseFloat(temperature));
+                    mGv_humid.setTargetValue(Float.parseFloat(humidity));
+                    //CoInput.setText(co);
+                    RoomView.setText(room);
+                }
+                catch (NullPointerException e){
+                    System.out.print("NullPointerException caught");
+                }
+
             }
 
             @Override
