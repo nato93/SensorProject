@@ -26,14 +26,14 @@
 
     </LinearLayout>
 
+    <!--        android:background="@color/colorAccent"-->
+
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF" />
-
-    <!--        android:background="@color/colorAccent"-->
 
     <TextView
         android:id="@+id/mCoView"

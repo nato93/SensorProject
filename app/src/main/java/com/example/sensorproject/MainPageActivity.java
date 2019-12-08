@@ -20,6 +20,16 @@ public class MainPageActivity extends AppCompatActivity {
     private TextView RoomView;
     DatabaseReference reff;
 
+
+
+/*      1. need to set the spinners item one to the room name from the database
+        2. need to add clicklistener on the gauges
+        3. need to add fragments for when adding a new room
+        4. need fragments for when gauges are clicked + when signing up + settings
+        5. widget for timelines when a gauge is clicked*/
+
+
+
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -31,11 +41,13 @@ public class MainPageActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
+
+        RoomView = findViewById(R.id.mRoomView);
+
         // the gauge
         final GaugeView mGv_co = findViewById(R.id.gv_co);
         final GaugeView mGv_temp = findViewById(R.id.gv_humid);
         final GaugeView mGv_humid = findViewById(R.id.gv_temp);
-        RoomView = findViewById(R.id.mRoomView);
 
 
         mGv_co.setShowRangeValues(true);
@@ -64,11 +76,8 @@ public class MainPageActivity extends AppCompatActivity {
                // gv_co.setTargetValue(Float.valueOf(String.valueOf(CoInput)));
             }
         };
-        //timer.start();
+        timer.start();
 */
-
-
-
 
         reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
         reff.addValueEventListener(new ValueEventListener() {
@@ -86,6 +95,8 @@ public class MainPageActivity extends AppCompatActivity {
                     mGv_humid.setTargetValue(Float.parseFloat(humidity));
                     //CoInput.setText(co);
                     RoomView.setText(room);
+
+
                 }
                 catch (NullPointerException e){
                     System.out.print("NullPointerException caught");
