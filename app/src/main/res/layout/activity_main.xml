@@ -82,12 +82,12 @@
 
     <ImageView
         android:id="@+id/mLogoView"
-        android:layout_width="206dp"
-        android:layout_height="190dp"
+        android:layout_width="156dp"
+        android:layout_height="140dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20sp"
         android:layout_marginEnd="8dp"
 
         android:contentDescription="@string/logoView"

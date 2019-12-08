@@ -3,67 +3,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/mNavBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#000000"
-        android:orientation="vertical">
+        android:background="#2196F3"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/mRoomView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mRoomView"
             android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:text="@string/mRoomView" />
+            android:textSize="20sp" />
+
+
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF" />
+
+    <!--        android:background="@color/colorAccent"-->
 
     <TextView
         android:id="@+id/mCoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mCoView"
-        android:textSize="36sp" />
+        android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/mCoInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mCoInput"
-        android:gravity="center|center_horizontal"
-        android:textSize="36sp" />
+    <com.ntt.customgaugeview.library.GaugeView
+        android:id="@+id/gv_co"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:divisions="10"
+        gauge:rangeValues="@array/ranges"
+        gauge:scaleEndValue="100"
+        gauge:showInnerRim="false"
+        gauge:showNeedle="true"
+        gauge:showOuterBorder="false"
+        gauge:showOuterRim="true"
+        gauge:showOuterShadow="false"
+        gauge:showRangeText="true"
+        gauge:showRanges="true"
+        gauge:showScale="true"
+        gauge:subdivisions="1"
+        gauge:textValueSize="0.15" />
+
 
     <TextView
         android:id="@+id/mTempView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mTempView"
-        android:textSize="36sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/mTempInput"
         android:layout_width="match_parent"
-        android:gravity="center|center_horizontal"
         android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal"
         android:text="@string/mTempInput"
-        android:textSize="36sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/mHumidView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15sp"
         android:gravity="center|center_horizontal"
         android:text="@string/mHumidView"
-        android:textSize="36sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/mHumidInput"
@@ -71,6 +101,6 @@
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
         android:text="@string/mHumidInput"
-        android:textSize="36sp" />
+        android:textSize="18sp" />
 
 </LinearLayout>

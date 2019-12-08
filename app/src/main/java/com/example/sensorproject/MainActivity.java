@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.mLoginButton);
         signUpButton = findViewById(R.id.mSignUpLink);
         forgotPassword = findViewById(R.id.mForgotPasswordLink);
+
 
 
         // Initialize Firebase Auth

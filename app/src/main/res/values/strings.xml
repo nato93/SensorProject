@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">SensorProject</string>
+
+    <string-array name="roomList">
+        <item>Current room</item>
+        <item>Other room</item>
+        <item>+ add new room</item>
+    </string-array>
+    <string name="mRoomView">ROOM 200</string>
+
+
     <string name="mUsername">Username</string>
     <string name="mPassword">Password</string>
 
@@ -21,8 +30,22 @@
 
 
     <string name="mShowButton">Show</string>
-    <string name="mRoomView">Room 3.136</string>
     <string name="logoView"></string>
+
+
+    <string-array name="ranges">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
 
 
 </resources>
