@@ -15,7 +15,6 @@
     <string name="mLoginButton">Login</string>
 
 
-
     <string name="mSignUpLink">Sign up</string>
     <string name="mForgotPasswordLink">Forgot password</string>
     <string name="mLoginRememberCheckBox">Remember me</string>
@@ -46,6 +45,9 @@
         <item>90</item>
         <item>100</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

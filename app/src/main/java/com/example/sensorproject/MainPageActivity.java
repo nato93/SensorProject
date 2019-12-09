@@ -1,14 +1,22 @@
 package com.example.sensorproject;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.example.sensorproject.MainPageFragments.GaugeClickedFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,11 +43,15 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
+        //The spinner aka dropdown menu
         Spinner mySpinner = findViewById(R.id.spinner1);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainPageActivity.this,
         android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.roomList));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
+
+       //The fragment manager to open fragments
+
 
 
         RoomView = findViewById(R.id.mRoomView);
@@ -58,6 +70,8 @@ public class MainPageActivity extends AppCompatActivity {
 
         mGv_temp.setShowRangeValues(true);
         mGv_temp.setTargetValue(0);
+
+
 
 
 /*
@@ -111,7 +125,61 @@ public class MainPageActivity extends AppCompatActivity {
         });
 
 
+//CLICK LISTENERS
+
+        mGv_co.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
+
+/*                Fragment fragment= new GaugeClickedFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
+                transaction.addToBackStack(null);  // this will manage backstack
+                transaction.commit();*/
+
+            }
+        });
+
+        mGv_temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
+
+/*                Fragment fragment= new GaugeClickedFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
+                transaction.addToBackStack(null);  // this will manage backstack
+                transaction.commit();*/
+
+            }
+        });
+
+
+        mGv_humid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
+
+/*                Fragment fragment= new GaugeClickedFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
+                transaction.addToBackStack(null);  // this will manage backstack
+                transaction.commit();*/
+
+            }
+        });
+
 
     }//on create end
+
+
+
+
+
+
 
 }
