@@ -1,11 +1,6 @@
 package com.example.sensorproject;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -14,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.sensorproject.MainPageFragments.GaugeClickedFragment;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ntt.customgaugeview.library.GaugeView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainPageActivity extends AppCompatActivity {
     private TextView RoomView;
@@ -133,11 +131,17 @@ public class MainPageActivity extends AppCompatActivity {
 
                 Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
-/*                Fragment fragment= new GaugeClickedFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
-                transaction.addToBackStack(null);  // this will manage backstack
-                transaction.commit();*/
+/*
+                FragmentManager fm = getSupportFragmentManager();
+                Fragment fragment = fm.findFragmentById(R.id.container_gauge);
+                fm.beginTransaction().add(R.id.container_gauge, new GaugeClickedFragment()).commit();
+*/
+
+/*
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container_gauge, new GaugeClickedFragment());
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();*/
 
             }
         });
@@ -148,12 +152,6 @@ public class MainPageActivity extends AppCompatActivity {
 
                 Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
-/*                Fragment fragment= new GaugeClickedFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
-                transaction.addToBackStack(null);  // this will manage backstack
-                transaction.commit();*/
-
             }
         });
 
@@ -163,12 +161,6 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
-
-/*                Fragment fragment= new GaugeClickedFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.gaugeclicked, fragment); // fragment container id in first parameter is the  container(Main layout id) of Activity
-                transaction.addToBackStack(null);  // this will manage backstack
-                transaction.commit();*/
 
             }
         });

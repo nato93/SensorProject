@@ -7,33 +7,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/mNavBar"
+    <FrameLayout
+        android:id="@+id/nav_container"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#2196F3"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/mRoomView"
+        <LinearLayout
+            android:id="@+id/mNavBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mRoomView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mRoomView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinner1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mRoomView"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"
+            android:textColor="#FFFFFF" />
 
-
-    </LinearLayout>
+    </FrameLayout>
 
     <!--        android:background="@color/colorAccent"-->
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#FFFFFF" />
+<!--    <FrameLayout
+        android:id="@+id/gauge_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>-->
 
     <TextView
         android:id="@+id/mCoView"
