@@ -143,7 +143,7 @@ public class MainPageActivity extends AppCompatActivity {
                 ft.commit();*/
 
 
-                // making the fragment
+                // making the fragment hhh
 
                 GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
                 FragmentManager fm = getSupportFragmentManager();
