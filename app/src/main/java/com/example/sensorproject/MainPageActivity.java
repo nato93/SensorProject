@@ -132,6 +132,11 @@ public class MainPageActivity extends AppCompatActivity {
                 Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
 
+                //the content is currently inside the container: container_main
+                // when the CO gauge is clicked i want it to open the fragment: fragment_gauge_clicked
+                // with the container: container_gauge
+
+
                 FragmentManager fm = getSupportFragmentManager();
                 Fragment fragment = fm.findFragmentById(R.id.container_gauge);
                 fm.beginTransaction().add(R.id.container_gauge, new GaugeClickedFragment()).commit();
