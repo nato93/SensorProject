@@ -128,8 +128,8 @@ public class MainPageActivity extends AppCompatActivity {
 
 
                 //the content is currently inside the container: container_main
-                // when the CO gauge is clicked i want it to open the fragment: fragment_gauge_clicked
-                // with the container: container_gauge
+                // when the CO gauge is clicked i want it to open the fragment: GaugeClickedFragment
+                // with the layout: container_gauge
 
 /*
                 FragmentManager fm = getSupportFragmentManager();
@@ -148,7 +148,7 @@ public class MainPageActivity extends AppCompatActivity {
                 GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
                 FragmentManager fm = getSupportFragmentManager();
 
-                fm.beginTransaction().add(R.id.container_gauge, gaugeClickedFragment).commit();
+                fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
 
 
             }
