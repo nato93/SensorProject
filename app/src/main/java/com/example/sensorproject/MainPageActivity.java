@@ -1,26 +1,10 @@
 package com.example.sensorproject;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.sensorproject.MainPageFragments.GaugeClickedFragment;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.ntt.customgaugeview.library.GaugeView;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 public class MainPageActivity extends AppCompatActivity {
     private TextView RoomView;
@@ -39,6 +23,8 @@ public class MainPageActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+
+
 
         //The spinner aka dropdown menu
         Spinner mySpinner = findViewById(R.id.spinner1);

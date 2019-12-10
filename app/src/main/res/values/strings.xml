@@ -6,7 +6,7 @@
         <item>Other room</item>
         <item>+ add new room</item>
     </string-array>
-    <string name="mRoomView"></string>
+    <string name="mRoomView">3.136 Building A</string>
 
 
     <string name="mUsername">Username</string>

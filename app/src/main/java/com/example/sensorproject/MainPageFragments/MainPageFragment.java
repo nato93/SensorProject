@@ -32,7 +32,6 @@ public class MainPageFragment extends Fragment {
 
 
 
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -109,10 +108,10 @@ public class MainPageFragment extends Fragment {
 
                 // making the fragment
 
-                GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
-               // FragmentManager fm = getSupportFragmentManager();
+                //GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
+                 //FragmentManager fm = getSupportFragmentManager();
 
-               // fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
+                 //fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
 
 
             }
