@@ -48,11 +48,10 @@ public class MainPageActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-       //The fragment manager to open fragments
-
-
-
         RoomView = findViewById(R.id.mRoomView);
+
+
+
 
         // the gauge
         final GaugeView mGv_co = findViewById(R.id.gv_co);
@@ -74,13 +73,9 @@ public class MainPageActivity extends AppCompatActivity {
 
 /*
         CountDownTimer timer = new CountDownTimer(10000, 2) {
-
-
-
             @Override
             public void onTick(long millisUntilFinished) {
                 //gv_co.setTargetValue(Float.valueOf(90));
-
             }
 
             @Override
@@ -136,16 +131,25 @@ public class MainPageActivity extends AppCompatActivity {
                 // when the CO gauge is clicked i want it to open the fragment: fragment_gauge_clicked
                 // with the container: container_gauge
 
-
+/*
                 FragmentManager fm = getSupportFragmentManager();
                 Fragment fragment = fm.findFragmentById(R.id.container_gauge);
                 fm.beginTransaction().add(R.id.container_gauge, new GaugeClickedFragment()).commit();
 
 
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container_gauge, new GaugeClickedFragment());
+                ft.replace(R.id.container_main, new GaugeClickedFragment());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                ft.commit();
+                ft.commit();*/
+
+
+                // making the fragment
+
+                GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
+                FragmentManager fm = getSupportFragmentManager();
+
+                fm.beginTransaction().add(R.id.container_gauge, gaugeClickedFragment).commit();
+
 
             }
         });
