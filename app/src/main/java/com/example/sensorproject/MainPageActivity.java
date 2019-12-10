@@ -131,17 +131,16 @@ public class MainPageActivity extends AppCompatActivity {
 
                 Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
-/*
+
                 FragmentManager fm = getSupportFragmentManager();
                 Fragment fragment = fm.findFragmentById(R.id.container_gauge);
                 fm.beginTransaction().add(R.id.container_gauge, new GaugeClickedFragment()).commit();
-*/
 
-/*
+
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container_gauge, new GaugeClickedFragment());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                ft.commit();*/
+                ft.commit();
 
             }
         });
@@ -167,11 +166,4 @@ public class MainPageActivity extends AppCompatActivity {
 
 
     }//on create end
-
-
-
-
-
-
-
 }
