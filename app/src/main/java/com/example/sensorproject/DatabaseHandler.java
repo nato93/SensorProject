@@ -21,7 +21,7 @@ public class DatabaseHandler {
   /*  Create a new createAccount method which takes
     in an email address and password, validates
     them and then creates a new user with the
-    createUserWithEmailAndPassword method.
+    createUserWithEmailAndPassword method. yoyo
 */
 /*
 
