@@ -17,20 +17,9 @@ import com.example.sensorproject.R;
 import com.google.firebase.database.DatabaseReference;
 import com.ntt.customgaugeview.library.GaugeView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MainPageFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MainPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MainPageFragment extends Fragment {
 
     DatabaseReference reff;
-
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +30,7 @@ public class MainPageFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    //private OnFragmentInteractionListener mListener;
 
     public MainPageFragment() {
         // Required empty public constructor
@@ -76,21 +65,28 @@ public class MainPageFragment extends Fragment {
 
 
 
-        final GaugeView mGv_co = getView().findViewById(R.id.gv_co);
-        final GaugeView mGv_temp = getView().findViewById(R.id.gv_humid);
-        final GaugeView mGv_humid = getView().findViewById(R.id.gv_temp);
 
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_main_page, container, false);
+
+        // Inflate the layout for this fragment
+
+
+        final GaugeView mGv_co = view.findViewById(R.id.gv_co);
+        final GaugeView mGv_temp = view.findViewById(R.id.gv_humid);
+        final GaugeView mGv_humid = view.findViewById(R.id.gv_temp);
 
         mGv_co.setShowRangeValues(true);
         mGv_co.setTargetValue(0);
-
         mGv_humid.setShowRangeValues(true);
         mGv_humid.setTargetValue(0);
-
         mGv_temp.setShowRangeValues(true);
         mGv_temp.setTargetValue(0);
-
-
 
         //CLICK LISTENERS
 
@@ -109,10 +105,9 @@ public class MainPageFragment extends Fragment {
                 // making the fragment
 
                 //GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
-                 //FragmentManager fm = getSupportFragmentManager();
+                //FragmentManager fm = getSupportFragmentManager();
 
-                 //fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
-
+                //fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
 
             }
         });
@@ -121,7 +116,7 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-               // Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -139,15 +134,14 @@ public class MainPageFragment extends Fragment {
 
 
 
+        return view;
+
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_page, container, false);
-    }
+
+/*
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -173,7 +167,11 @@ public class MainPageFragment extends Fragment {
         mListener = null;
     }
 
-    /**
+
+
+
+    */
+/**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
@@ -182,11 +180,13 @@ public class MainPageFragment extends Fragment {
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
-     */
+     *//*
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+*/
 
 
 

@@ -1,10 +1,16 @@
 package com.example.sensorproject;
 
+
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+import com.example.sensorproject.MainPageFragments.MainPageFragment;
 
 public class MainPageActivity extends AppCompatActivity {
     private TextView RoomView;
@@ -19,11 +25,16 @@ public class MainPageActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
+        FragmentManager fm = getSupportFragmentManager();
+        final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
+        fm.beginTransaction().add(R.id.MainLayout, new MainPageFragment()).commit();
 
 
         //The spinner aka dropdown menu
