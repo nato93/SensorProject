@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_gauge"
+    android:id="@+id/balbalblayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainPageFragments.GaugeClickedFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/information_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_margin="50sp"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        tools:text="@string/information_text" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="203dp"
+        android:layout_weight="1"
+        android:text="Click for work" />
+
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -14,8 +15,13 @@ import android.widget.Toast;
 
 import com.example.sensorproject.MainPageActivity;
 import com.example.sensorproject.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ntt.customgaugeview.library.GaugeView;
+
 
 public class MainPageFragment extends Fragment {
 
@@ -57,20 +63,22 @@ public class MainPageFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
-
-
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
 
         View view = inflater.inflate(R.layout.fragment_main_page, container, false);
 
@@ -88,14 +96,35 @@ public class MainPageFragment extends Fragment {
         mGv_temp.setShowRangeValues(true);
         mGv_temp.setTargetValue(0);
 
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String co=dataSnapshot.child("co").getValue().toString();
+                String temperature=dataSnapshot.child("temperature").getValue().toString();
+                String humidity=dataSnapshot.child("humidity").getValue().toString();
+
+                mGv_co.setTargetValue(Float.parseFloat(co));
+                mGv_humid.setTargetValue(Float.parseFloat(humidity));
+                mGv_temp.setTargetValue(Float.parseFloat(temperature));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+
+        });
+
         //CLICK LISTENERS
 
         mGv_co.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(MainPageFragment, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
 
                 //the content is currently inside the container: container_main
                 // when the CO gauge is clicked i want it to open the fragment: GaugeClickedFragment
@@ -116,7 +145,17 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
+
+
+
+
+                //final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+
+
+
 
             }
         });
@@ -126,51 +165,16 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
                 //Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
             }
         });
-
-
-
-
         return view;
-
-
     }
 
 
-/*
-
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-
-
-
-    */
 /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -187,8 +191,4 @@ public class MainPageFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 */
-
-
-
-
 }       // End of fragment
