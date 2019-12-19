@@ -64,7 +64,7 @@ public class MainPageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("users").child("user_one");
+        reff = FirebaseDatabase.getInstance().getReference().child("Climate");
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -100,9 +100,9 @@ public class MainPageFragment extends Fragment {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String co=dataSnapshot.child("co").getValue().toString();
-                String temperature=dataSnapshot.child("temperature").getValue().toString();
-                String humidity=dataSnapshot.child("humidity").getValue().toString();
+                String co=dataSnapshot.child("Co").getValue().toString();
+                String temperature=dataSnapshot.child("Temperature").getValue().toString();
+                String humidity=dataSnapshot.child("Humidity").getValue().toString();
 
                 mGv_co.setTargetValue(Float.parseFloat(co));
                 mGv_humid.setTargetValue(Float.parseFloat(humidity));
