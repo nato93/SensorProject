@@ -108,6 +108,14 @@ public class MainPageFragment extends Fragment {
                 mGv_humid.setTargetValue(Float.parseFloat(humidity));
                 mGv_temp.setTargetValue(Float.parseFloat(temperature));
 
+                // send a notification
+
+                if(Float.parseFloat((temperature)) > 25){
+                    Toast.makeText(getActivity(),"It is too hot!",Toast.LENGTH_SHORT).show();
+
+                }
+
+
             }
 
             @Override
