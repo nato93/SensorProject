@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.sensorproject.R;
 
@@ -16,11 +19,22 @@ import com.example.sensorproject.R;
 public class GaugeClickedFragment extends Fragment {
 
 
+    private EditText temperatureInfo;
+    private Button chartButton;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gauge_clicked, container, false);
+
+
+        //temperatureInfo = findViewById(R.id.mTemperatureInfo);
+        //chartButton  = view.findViewById(R.id.mChartButton);
+
+
+
     }
     /*
 

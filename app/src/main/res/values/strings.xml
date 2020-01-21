@@ -32,13 +32,13 @@
 
     //The gauges clicked
 
-    <string name="temperatureInfo">Optimal range: 21-25, for our best performance. If it becomes too hot or cold
+    <string name="mTemperatureInfo">Optimal range: 21-25, for our best performance. If it becomes too hot or cold
     we begin to loose concentration. The reason for a drop in concentration, is because of the energy that
         is used by our bodies in trying to make us warmer or cooler.
         Less energy therefore goes into helping you concentrate.</string>
 
 
-    <string name="humidityInfo">
+    <string name="mHumidityInfo">
         Optimal range: 45-55%.
          Naturally, when our bodies start to heat up, we release sweat. This sweat is then evaporated from the skin, which in turn, helps to cool us off.
 When the air has a high moisture content, as is the case in humid weather, this sweat cannot evaporate,
@@ -56,7 +56,7 @@ When the air has a high moisture content, as is the case in humid weather, this 
         disorders, humidity should not exceed 50 percent, as high humidity can aggravate symptoms.
         Dry or itchy skin conditions are aggravated by low humidity, which tends to dry out the skin.</string>
 
-    <string name="coInfo">Optimal Range: 1 to 70 ppm. Breathing CO can cause headache, dizziness, vomiting, and nausea. If CO levels are high enough, you may become unconscious or die. Exposure to moderate and high levels of CO over long periods of time has also been linked with increased risk of heart disease. People who survive severe CO poisoning may suffer long-term health problems.
+    <string name="mCoInfo">Optimal Range: 1 to 70 ppm. Breathing CO can cause headache, dizziness, vomiting, and nausea. If CO levels are high enough, you may become unconscious or die. Exposure to moderate and high levels of CO over long periods of time has also been linked with increased risk of heart disease. People who survive severe CO poisoning may suffer long-term health problems.
     The health effects of CO depend on the CO concentration and length of exposure, as well as each individuals health condition. CO concentration is measured in parts per million (ppm). Most people will not experience any symptoms from prolonged exposure to CO levels of approximately 1 to 70 ppm but some heart patients might experience an increase in chest pain. As CO levels increase and remain above 70 ppm, symptoms become more noticeable and can include headache, fatigue and nausea. At sustained CO concentrations above 150 to 200 ppm, disorientation, unconsciousness, and death are possible.
 </string>
 
