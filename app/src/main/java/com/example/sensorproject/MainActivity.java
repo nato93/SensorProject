@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView signUpButton, forgotPassword;
     private FirebaseAuth.AuthStateListener authStateListener;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.mSignUpLink);
         forgotPassword = findViewById(R.id.mForgotPasswordLink);
 
-        authStateListener = new FirebaseAuth.AuthStateListener() {
+        firebaseAuth = FirebaseAuth.getInstance();
+ /*       authStateListener = new FirebaseAuth.AuthStateListener() {
+
 
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -57,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+*/
+
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     inputEmail.setError("Provide your Email first!");
                     inputEmail.requestFocus();
                 } else if (userPaswd.isEmpty()) {
-                    inputEmail.setError("Enter Password!");
+                    inputPassword.setError("Enter Password!");
                     inputPassword.requestFocus();
                 } else if (userEmail.isEmpty() && userPaswd.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
@@ -76,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "Not sucessfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Email or password is incorrect", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(MainActivity.this, MainPageActivity.class));
                             }
@@ -87,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,13 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
+
+/*    @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         firebaseAuth.addAuthStateListener(authStateListener);
         //DatabaseHandler.updateUI(currentUser);
-    }
+    }*/
+
+
+
 }
 
 
