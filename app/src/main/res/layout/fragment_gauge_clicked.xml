@@ -20,14 +20,14 @@
         android:gravity="center|center_horizontal"
         android:paddingLeft="20sp"
         android:paddingRight="20sp"
+        android:text="Optimal range 21-25"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512"
-        tools:text="@string/mTemperatureInfo" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <Button
         android:id="@+id/mChartButton"
@@ -38,12 +38,12 @@
         android:layout_marginRight="20sp"
         android:layout_weight="1"
         android:gravity="center|center_vertical"
+        android:text="The Chart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/mChartButton" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
