@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
 
     public EditText signUpEmail, signUpPassword;
     private Button signUpButton;
-    public FirebaseAuth mAuth;
+    public FirebaseAuth firebaseAuth;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 // ...
 // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         signUpEmail = findViewById(R.id.mSignUpEmail);
@@ -41,21 +46,29 @@ public class SignUpActivity extends AppCompatActivity {
 
                 String mSignUpEmail = signUpEmail.getText().toString();
                 String mSignUpPassword = signUpPassword.getText().toString();
-                mAuth.createUserWithEmailAndPassword(mSignUpEmail, mSignUpPassword);
 
+                //register user
+                firebaseAuth.createUserWithEmailAndPassword(mSignUpEmail,mSignUpPassword)
+                        .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                //Log.d(TAG, "New user registration: " + task.isSuccessful());
+                                Toast.makeText(SignUpActivity.this,"You successfully created your account!", Toast.LENGTH_SHORT).show();
+                                //Intent signedUp = new Intent(SignUpActivity.this, MainPageActivity.class);
+                                //startActivity(signedUp);
 
-                Intent signedUp = new Intent(SignUpActivity.this, MainPageActivity.class);
-                startActivity(signedUp);
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(SignUpActivity.this,"Somethings went wrong!" + task.getException(), Toast.LENGTH_SHORT).show();
+                                    //SignUpActivity.this.Toast.makeText("Authentication failed. " + task.getException());
+                                } else {
+                                    SignUpActivity.this.startActivity(new Intent(SignUpActivity.this, MainPageActivity.class));
+                                    SignUpActivity.this.finish();
+                                }
+                            }
+                        });
+
             }
         });
 
-
-
-
-
-
         }
-
-
-
 }

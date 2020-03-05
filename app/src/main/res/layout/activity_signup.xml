@@ -24,13 +24,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        tools:ignore="Autofill"
         android:ems="10"
-        android:hint="@string/mPassword"
+        android:hint="@string/mSignUpCriterias"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mSignUpEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/mSignUpEmail"
+        tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/mSignUpButton"

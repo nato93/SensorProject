@@ -9,13 +9,17 @@
     <string name="mRoomView">3.136 Building A</string>
 
 
-    <string name="mSignUpEmail">email@test.dk</string>
     <string name="mLoginEmail">email@test.dk</string>
     <string name="mPassword">Password</string>
+    <string name="mSignUpCriterias">min 6 characters</string>
+
 
     <string name="mLoginButton">Login</string>
 
     <string name="mSignUpLink">Sign up</string>
+    <string name="mSignUpEmail">email@test.dk</string>
+
+
     <string name="mForgotPasswordLink">Forgot password</string>
     <string name="mLoginRememberCheckBox">Remember me</string>
 
@@ -29,6 +33,11 @@
 
 
     //The gauges clicked
+
+
+    <string name="chart">The Chart</string>
+    <string name="info">Optimal range 21-25</string>
+
 
     <string name="mTemperatureInfo">Optimal range: 21-25, for our best performance. If it becomes too hot or cold
     we begin to loose concentration. The reason for a drop in concentration, is because of the energy that

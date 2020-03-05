@@ -32,6 +32,8 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
+
+        RoomView = findViewById(R.id.mRoomView);
         FragmentManager fm = getSupportFragmentManager();
         final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
         fm.beginTransaction().add(R.id.MainLayout, new MainPageFragment()).commit();
@@ -44,26 +46,7 @@ public class MainPageActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-        RoomView = findViewById(R.id.mRoomView);
 
-
-
-
-
-/*
-        CountDownTimer timer = new CountDownTimer(10000, 2) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                //gv_co.setTargetValue(Float.valueOf(90));
-            }
-
-            @Override
-            public void onFinish() {
-               // gv_co.setTargetValue(Float.valueOf(String.valueOf(CoInput)));
-            }
-        };
-        timer.start();
-*/
 
 
 

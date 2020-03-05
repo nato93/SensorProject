@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sensorproject.MainPageActivity;
@@ -21,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ntt.customgaugeview.library.GaugeView;
+
+import static java.lang.Float.valueOf;
 
 
 public class MainPageFragment extends Fragment {
@@ -78,12 +81,8 @@ public class MainPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
         View view = inflater.inflate(R.layout.fragment_main_page, container, false);
-
         // Inflate the layout for this fragment
-
 
         final GaugeView mGv_co = view.findViewById(R.id.gv_co);
         final GaugeView mGv_temp = view.findViewById(R.id.gv_humid);
@@ -96,13 +95,12 @@ public class MainPageFragment extends Fragment {
         mGv_temp.setShowRangeValues(true);
         mGv_temp.setTargetValue(0);
 
-
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String co=dataSnapshot.child("Co").getValue().toString();
-                String temperature=dataSnapshot.child("Temperature").getValue().toString();
-                String humidity=dataSnapshot.child("Humidity").getValue().toString();
+                String co = dataSnapshot.child("Co").getValue().toString();
+                String temperature = dataSnapshot.child("Temperature").getValue().toString();
+                String humidity = dataSnapshot.child("Humidity").getValue().toString();
 
                 mGv_co.setTargetValue(Float.parseFloat(co));
                 mGv_humid.setTargetValue(Float.parseFloat(humidity));
@@ -114,8 +112,6 @@ public class MainPageFragment extends Fragment {
                     Toast.makeText(getActivity(),"It is too hot!",Toast.LENGTH_SHORT).show();
 
                 }
-
-
             }
 
             @Override
@@ -130,41 +126,18 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
-
-                //the content is currently inside the container: container_main
-                // when the CO gauge is clicked i want it to open the fragment: GaugeClickedFragment
-                // with the layout: container_gauge
-
-
-                // making the fragment
-
-                //GaugeClickedFragment gaugeClickedFragment = new GaugeClickedFragment();
-                //FragmentManager fm = getSupportFragmentManager();
-
-                //fm.beginTransaction().replace(R.id.container_gauge, gaugeClickedFragment).commit();
-
             }
         });
 
         mGv_temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
-
-
-
-
                 //final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
-
-
-
-
             }
         });
 
