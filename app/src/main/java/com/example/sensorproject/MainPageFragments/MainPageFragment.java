@@ -134,7 +134,7 @@ public class MainPageFragment extends Fragment {
         mGv_temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
                 //final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
