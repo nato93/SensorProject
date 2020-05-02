@@ -85,24 +85,19 @@
       </string>
 
     <string name="mCoInfo">
+        <b>Red zone:</b> above 90ppm, way too high co level CRITICAL\n
+        <b>Yellow zone:</b> between 70-90ppm, too high co level\n
+        <b>Green zone:</b> between 1-70ppm, optimal\n
+        <b>Description:</b>\n
 
-      <br> <b> Red zone:</b> above 90ppm, way too high co level CRITICAL</br>
-        <br></br>
-       <br><b> Yellow zone:</b> between 70-90ppm, too high co level</br>
-                <br></br>
 
-      <br> <b> Green zone:</b> between 1-70ppm, optimal</br>
-        <br></br>
 
-       <br><b> Description:</b></br>
-        <br></br>
+        <b>Red zone:</b> At sustained CO concentrations above 150 ppm,
+        disorientation, unconsciousness, vomiting and death are possible.
 
-        <br><b>Red zone:</b> At sustained CO concentrations above 150 ppm,
-        disorientation, unconsciousness, vomiting and death are possible.</br>
-
-      <br><b> Yellow zone:</b> can increase risk of heart disease, cause headache, fatigue and nausea
+      <b>Yellow zone:</b> can increase risk of heart disease, cause headache, fatigue and nausea
         if it remains in this zone for an extended period of time, people with
-        heart diseases might experience an increase in chest pain.</br>
+        heart diseases might experience an increase in chest pain.
 
         <br><b>Green zone:</b> Optimal and nothing to worry about.</br>
 </string>
