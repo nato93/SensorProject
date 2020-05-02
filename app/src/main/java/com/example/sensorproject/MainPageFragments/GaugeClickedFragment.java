@@ -1,5 +1,6 @@
 package com.example.sensorproject.MainPageFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sensorproject.R;
@@ -19,8 +21,14 @@ import com.example.sensorproject.R;
 public class GaugeClickedFragment extends Fragment {
 
 
-    private EditText temperatureInfo;
+    private TextView coText;
     private Button chartButton;
+
+    private GaugeClickedListener listener;
+
+    public interface GaugeClickedListener {
+        void onInputGaugeClickedSent(CharSequence input);
+    }
 
 
     @Override
@@ -30,17 +38,50 @@ public class GaugeClickedFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_gauge_clicked, container, false);
         configureImageButton(view);
 
-        return view;
 
-        //return inflater.inflate(R.layout.fragment_gauge_clicked, container, false);
-        //temperatureInfo = findViewById(R.id.mTemperatureInfo);
-        //chartButton  = view.findViewById(R.id.mChartButton);
+        coText = view.findViewById(R.id.mInfoText);
+
+        coText.setText(R.string.mCoInfo);
+
+        //gaugeInfoText = view.findViewById(R.id.mInfoText);
+
+        //gaugeInfoText = MainPageFragment.infoText;
+
+        //CharSequence input = gaugeText.toString();
+        //updateTextView(input);
+
+        //gaugeText.setText(R.string.mCoInfo);
+        //CharSequence input = gaugeText.getText();
+        //updateTextView(gaugeText.toString());
+        return view;
     }
+
+    public void updateTextView(CharSequence newText){
+        coText.setText(newText);
+    }
+
+    public void onAttach(Context context){
+        super.onAttach(context);
+        if (context instanceof GaugeClickedListener){
+            listener = (GaugeClickedListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + "Must implement GaugeClickedListener");
+        }
+    }
+
+
+
+    public void onDetach(){
+        super.onDetach();
+        listener = null;
+    }
+
+
 
     private void configureImageButton(View view){
 
         ImageButton backButton = (ImageButton) view.findViewById(R.id.mBackButton);
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,19 +89,8 @@ public class GaugeClickedFragment extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.MainLayout, new MainPageFragment());
                 fr.addToBackStack(null);
-                Toast.makeText(getActivity(), "you successfully went back", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "you successfully went back", Toast.LENGTH_SHORT).show();
                 fr.commit();
-
-
-
-
-
-/*                MainPageFragment nextFrag = new MainPageFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.balbalblayout, nextFrag, "findThisFragment")
-                        .addToBackStack(null)
-                        .commit();*/
-
             }
         });
     }

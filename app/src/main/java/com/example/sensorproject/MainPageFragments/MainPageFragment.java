@@ -11,9 +11,11 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sensorproject.MainActivity;
 import com.example.sensorproject.MainPageActivity;
 import com.example.sensorproject.R;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +31,19 @@ import static java.lang.Float.valueOf;
 public class MainPageFragment extends Fragment {
 
     DatabaseReference reff;
+    static TextView infoText;
+
+    private MainPageListener listener;
+
+    public interface MainPageListener {
+        void onInputMainPageFragmentSent(CharSequence input);
+    }
+
+    public MainPageFragment() {
+        // Required empty public constructor
+    }
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,12 +53,6 @@ public class MainPageFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    //private OnFragmentInteractionListener mListener;
-
-    public MainPageFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -62,27 +71,27 @@ public class MainPageFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    //private OnFragmentInteractionListener mListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         reff = FirebaseDatabase.getInstance().getReference().child("Climate");
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_main_page, container, false);
+        final View view = inflater.inflate(R.layout.fragment_main_page, container, false);
         // Inflate the layout for this fragment
+
+        infoText = view.findViewById(R.id.mInfoText);
+
 
         final GaugeView mGv_co = view.findViewById(R.id.gv_co);
         final GaugeView mGv_temp = view.findViewById(R.id.gv_humid);
@@ -110,7 +119,6 @@ public class MainPageFragment extends Fragment {
 
                 if(Float.parseFloat((temperature)) > 25){
                     Toast.makeText(getActivity(),"It is too hot!",Toast.LENGTH_SHORT).show();
-
                 }
             }
 
@@ -125,9 +133,11 @@ public class MainPageFragment extends Fragment {
         mGv_co.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+                //infoText.setText(R.string.mCoInfo);
+               // CharSequence input = infoText.getText();
+                //listener.onInputMainPageFragmentSent(input);
             }
         });
 
@@ -138,21 +148,53 @@ public class MainPageFragment extends Fragment {
                 //final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+                //infoText.setText(R.string.mTemperatureInfo);
             }
         });
-
 
         mGv_humid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
                 //Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
+                //infoText.setText(R.string.mHumidityInfo);
+                //CharSequence input = infoText.toString();
+                //listener.onInputMainPageFragmentSent(input);
+                //infoText.setText(R.string.mHumidityInfo);
+                //updateTextView(infoText);
+
+                Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
+
+
+
             }
         });
         return view;
+    } //OnCreate ends
+
+    public void updateTextView(TextView newText){
+        infoText = newText;
+
+    }
+
+
+
+    public void onAttach(Context context){
+        super.onAttach(context);
+        if (context instanceof MainPageListener){
+            listener = (MainPageListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+            + "Must implement MainPageListener");
+        }
+
+    }
+
+    public void onDetach(){
+        super.onDetach();
+        listener = null;
     }
 
 

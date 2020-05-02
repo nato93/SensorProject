@@ -10,33 +10,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.sensorproject.MainPageFragments.GaugeClickedFragment;
 import com.example.sensorproject.MainPageFragments.MainPageFragment;
 
-public class MainPageActivity extends AppCompatActivity {
+public class MainPageActivity extends AppCompatActivity implements MainPageFragment.MainPageListener, GaugeClickedFragment.GaugeClickedListener {
     private TextView RoomView;
 
-
-
-/*      1. need to set the spinners item one to the room name from the database
-        2. need to add clicklistener on the gauges
-        3. need to add fragments for when adding a new room
-        4. need fragments for when gauges are clicked + when signing up + settings
-        5. widget for timelines when a gauge is clicked*/
-
-
-
+    private MainPageFragment mainPageFragment;
+    private GaugeClickedFragment gaugeClickedFragment;
 
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+        FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction()
+                .add(R.id.MainLayout, new MainPageFragment())
+                .commit();
 
 
         RoomView = findViewById(R.id.mRoomView);
-        FragmentManager fm = getSupportFragmentManager();
-        final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
-        fm.beginTransaction().add(R.id.MainLayout, new MainPageFragment()).commit();
+
+        mainPageFragment = new MainPageFragment();
+        gaugeClickedFragment = new GaugeClickedFragment();
 
 
         //The spinner aka dropdown menu
@@ -46,11 +43,16 @@ public class MainPageActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-
-
-
-
-
-
     }//on create end
+
+    @Override
+    public void onInputMainPageFragmentSent(CharSequence input) {
+        gaugeClickedFragment.updateTextView(input);
+
+    }
+
+    @Override
+    public void onInputGaugeClickedSent(CharSequence input) {
+
+    }
 }

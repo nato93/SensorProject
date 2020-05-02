@@ -39,32 +39,72 @@
     <string name="info">Optimal range 21-25</string>
 
 
-    <string name="mTemperatureInfo">Optimal range: 21-25, for our best performance. If it becomes too hot or cold
-    we begin to loose concentration. The reason for a drop in concentration, is because of the energy that
-        is used by our bodies in trying to make us warmer or cooler.
-        Less energy therefore goes into helping you concentrate.</string>
+    <string name="mTemperatureInfo">
+
+
+        <b>Red zone:</b> below 10 or above 30 degrees way too cold or hot
+
+       <br> <b>Yellow zone:</b> between 10-21 or 25-30 degrees, bit too hot or cold</br>
+
+       <br> <b>Green zone:</b> between 21-25 degrees, optimal</br>
+
+        <br><b>Description:</b></br>
+
+
+        <br><b>Red zone: Too hot or cold to concentrate and will impact the body in its
+        ability to function and concentrate properly</b></br>
+
+        <br><b>Yellow zone: a bit too hot or cold, you will be able to feel a slight decrease in concentration and
+        energy levels.</b></br>
+
+        <br><b>Green zone: Optimal and nothing to worry about.</b></br>
+        </string>
 
 
     <string name="mHumidityInfo">
-        Optimal range: 45-55%.
-         Naturally, when our bodies start to heat up, we release sweat. This sweat is then evaporated from the skin, which in turn, helps to cool us off.
-When the air has a high moisture content, as is the case in humid weather, this sweat cannot evaporate,
-         leaving our bodies feeling hot and sticky.
-        To cool off, our bodies must work even harder.
-        This results in excessive sweating,
-        increased rate and depth of blood circulation and increased respiration.
-        Excessive sweating can cause a loss of water and chemicals that the body
-        needs in order to function properly, potentially putting our health in jeopardy.
-        According to the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE),
-        the ideal humidity range for humans is between 30 to 60 percent relative humidity.
-        The ideal is somewhere around 45-55%. Very high levels of humidity contribute to the growth of mold,
-        funguses, dust mites, and other pests. Mold contributes to a number of diseases and thrives in humid
-        climates, generally above 60 percent humidity. For people suffering from asthma and other respiratory
-        disorders, humidity should not exceed 50 percent, as high humidity can aggravate symptoms.
-        Dry or itchy skin conditions are aggravated by low humidity, which tends to dry out the skin.</string>
 
-    <string name="mCoInfo">Optimal Range: 1 to 70 ppm. Breathing CO can cause headache, dizziness, vomiting, and nausea. If CO levels are high enough, you may become unconscious or die. Exposure to moderate and high levels of CO over long periods of time has also been linked with increased risk of heart disease. People who survive severe CO poisoning may suffer long-term health problems.
-    The health effects of CO depend on the CO concentration and length of exposure, as well as each individuals health condition. CO concentration is measured in parts per million (ppm). Most people will not experience any symptoms from prolonged exposure to CO levels of approximately 1 to 70 ppm but some heart patients might experience an increase in chest pain. As CO levels increase and remain above 70 ppm, symptoms become more noticeable and can include headache, fatigue and nausea. At sustained CO concentrations above 150 to 200 ppm, disorientation, unconsciousness, and death are possible.
+        <br><b>Red zone:</b> above 60% or less than 30% humidity, way too humid or dry</br>
+        <br><b>Yellow zone:</b> between 30-45% or between 50-60% humidity, too humid or dry.</br>
+        <br><b>Green zone:</b> between 45-50% humidity, optimal</br>
+
+        <br><b>Description:</b></br>
+
+       <br><b> Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
+        it can mean that the room is either too humid or too dry. Can cause
+        growth of mold, funguses, dust mites, and other pests.
+        Mold contributes to a number of diseases and thrives in humid
+        climates, generally above 60 percent. If the room continues to be in the
+        red zone for an extended period of time try to increase your breaks
+        from the room, or try to do something to fix it.</br>
+
+        <br><b>Yellow zone:</b> it is either a bit too humid or dry. This wont have a huge affect on a healthy body,
+        but people with asthma or respiratory diseases should not be in this room.</br>
+
+        <br><b>Green zone:</b> Means that the humidity is perfect for optimal body function.</br>
+
+      </string>
+
+    <string name="mCoInfo">
+
+      <br> <b> Red zone:</b> above 90ppm, way too high co level CRITICAL</br>
+        <br></br>
+       <br><b> Yellow zone:</b> between 70-90ppm, too high co level</br>
+                <br></br>
+
+      <br> <b> Green zone:</b> between 1-70ppm, optimal</br>
+        <br></br>
+
+       <br><b> Description:</b></br>
+        <br></br>
+
+        <br><b>Red zone:</b> At sustained CO concentrations above 150 ppm,
+        disorientation, unconsciousness, vomiting and death are possible.</br>
+
+      <br><b> Yellow zone:</b> can increase risk of heart disease, cause headache, fatigue and nausea
+        if it remains in this zone for an extended period of time, people with
+        heart diseases might experience an increase in chest pain.</br>
+
+        <br><b>Green zone:</b> Optimal and nothing to worry about.</br>
 </string>
 
 
