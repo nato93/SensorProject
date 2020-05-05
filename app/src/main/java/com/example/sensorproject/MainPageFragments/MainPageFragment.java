@@ -1,7 +1,6 @@
 package com.example.sensorproject.MainPageFragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,12 +10,9 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sensorproject.MainActivity;
-import com.example.sensorproject.MainPageActivity;
 import com.example.sensorproject.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -134,7 +130,7 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+                fm.beginTransaction().replace(R.id.MainLayout, new CoClickedFragment()).commit();
                 //infoText.setText(R.string.mCoInfo);
                // CharSequence input = infoText.getText();
                 //listener.onInputMainPageFragmentSent(input);
@@ -147,7 +143,7 @@ public class MainPageFragment extends Fragment {
                 //Toast.makeText(getActivity(),"IT IS WORKING TUUDOLOO!",Toast.LENGTH_SHORT).show();
                 //final Fragment fragment = fm.findFragmentById(R.id.MainLayout);
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+                fm.beginTransaction().replace(R.id.MainLayout, new TempClickedFragment()).commit();
                 //infoText.setText(R.string.mTemperatureInfo);
             }
         });
@@ -156,7 +152,7 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().replace(R.id.MainLayout, new GaugeClickedFragment()).commit();
+                fm.beginTransaction().replace(R.id.MainLayout, new HumClickedFragment()).commit();
                 //Toast.makeText(MainPageActivity.this, "ITS WORKING", Toast.LENGTH_SHORT).show();
 
                 //infoText.setText(R.string.mHumidityInfo);

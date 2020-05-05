@@ -1,23 +1,21 @@
 package com.example.sensorproject;
 
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.sensorproject.MainPageFragments.GaugeClickedFragment;
+import com.example.sensorproject.MainPageFragments.CoClickedFragment;
 import com.example.sensorproject.MainPageFragments.MainPageFragment;
 
-public class MainPageActivity extends AppCompatActivity implements MainPageFragment.MainPageListener, GaugeClickedFragment.GaugeClickedListener {
+public class MainPageActivity extends AppCompatActivity implements MainPageFragment.MainPageListener, CoClickedFragment.GaugeClickedListener {
     private TextView RoomView;
 
     private MainPageFragment mainPageFragment;
-    private GaugeClickedFragment gaugeClickedFragment;
+    private CoClickedFragment gaugeClickedFragment;
 
 
     @Override
@@ -33,7 +31,7 @@ public class MainPageActivity extends AppCompatActivity implements MainPageFragm
         RoomView = findViewById(R.id.mRoomView);
 
         mainPageFragment = new MainPageFragment();
-        gaugeClickedFragment = new GaugeClickedFragment();
+        gaugeClickedFragment = new CoClickedFragment();
 
 
         //The spinner aka dropdown menu

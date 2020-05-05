@@ -2,26 +2,23 @@ package com.example.sensorproject.MainPageFragments;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.sensorproject.R;
 
 
-public class GaugeClickedFragment extends Fragment {
+public class HumClickedFragment extends Fragment {
 
 
-    private TextView coText;
+    private TextView humText;
     private Button chartButton;
 
     private GaugeClickedListener listener;
@@ -35,13 +32,13 @@ public class GaugeClickedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_gauge_clicked, container, false);
+        View view = inflater.inflate(R.layout.fragment_hum_clicked, container, false);
         configureImageButton(view);
 
+        humText = view.findViewById(R.id.mInfoText);
 
-        coText = view.findViewById(R.id.mInfoText);
+        humText.setText(R.string.mHumidityInfo);
 
-        coText.setText(R.string.mCoInfo);
 
         //gaugeInfoText = view.findViewById(R.id.mInfoText);
 
@@ -56,9 +53,9 @@ public class GaugeClickedFragment extends Fragment {
         return view;
     }
 
-    public void updateTextView(CharSequence newText){
+/*    public void updateTextView(CharSequence newText){
         coText.setText(newText);
-    }
+    }*/
 
     public void onAttach(Context context){
         super.onAttach(context);
