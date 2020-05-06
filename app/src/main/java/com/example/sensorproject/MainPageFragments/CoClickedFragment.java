@@ -54,28 +54,6 @@ public class CoClickedFragment extends Fragment {
         return view;
     }
 
-    public void updateTextView(CharSequence newText){
-        coText.setText(newText);
-    }
-
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof GaugeClickedListener){
-            listener = (GaugeClickedListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + "Must implement GaugeClickedListener");
-        }
-    }
-
-
-
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
-    }
-
-
 
     private void configureImageButton(View view){
 

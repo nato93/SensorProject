@@ -21,11 +21,7 @@ public class HumClickedFragment extends Fragment {
     private TextView humText;
     private Button chartButton;
 
-    private GaugeClickedListener listener;
 
-    public interface GaugeClickedListener {
-        void onInputGaugeClickedSent(CharSequence input);
-    }
 
 
     @Override
@@ -57,22 +53,8 @@ public class HumClickedFragment extends Fragment {
         coText.setText(newText);
     }*/
 
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof GaugeClickedListener){
-            listener = (GaugeClickedListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + "Must implement GaugeClickedListener");
-        }
-    }
 
 
-
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
-    }
 
 
 

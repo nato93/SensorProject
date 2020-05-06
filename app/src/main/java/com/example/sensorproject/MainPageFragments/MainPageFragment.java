@@ -88,7 +88,6 @@ public class MainPageFragment extends Fragment {
 
         infoText = view.findViewById(R.id.mInfoText);
 
-
         final GaugeView mGv_co = view.findViewById(R.id.gv_co);
         final GaugeView mGv_temp = view.findViewById(R.id.gv_humid);
         final GaugeView mGv_humid = view.findViewById(R.id.gv_temp);
@@ -116,6 +115,18 @@ public class MainPageFragment extends Fragment {
                 if(Float.parseFloat((temperature)) > 25){
                     Toast.makeText(getActivity(),"It is too hot!",Toast.LENGTH_SHORT).show();
                 }
+
+                if(Float.parseFloat((co)) > 100){
+                    Toast.makeText(getActivity(),"high level!",Toast.LENGTH_SHORT).show();
+                    //dataSnapshot.child("Co").getValue().toString()
+                }
+
+                if(Float.parseFloat((temperature)) > 100){
+                    Toast.makeText(getActivity(),"high level!",Toast.LENGTH_SHORT).show();
+                    mGv_co.setTargetValue(Float.parseFloat(temperature));
+                }
+
+
             }
 
             @Override
@@ -170,28 +181,8 @@ public class MainPageFragment extends Fragment {
         return view;
     } //OnCreate ends
 
-    public void updateTextView(TextView newText){
-        infoText = newText;
-
-    }
 
 
-
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof MainPageListener){
-            listener = (MainPageListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-            + "Must implement MainPageListener");
-        }
-
-    }
-
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
-    }
 
 
 /**
