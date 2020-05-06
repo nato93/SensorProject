@@ -102,12 +102,36 @@ public class MainPageFragment extends Fragment {
                 String temperature = dataSnapshot.child("Temperature").getValue().toString();
                 String humidity = dataSnapshot.child("Humidity").getValue().toString();
 
-                mGv_co.setTargetValue(Float.parseFloat(co));
+                //Converting strings into
+                int newCo = Integer.parseInt(co);
+
+
+                if (newCo < 100){
+                    reff.child("Climate").child("co").setValue("100").toString();
+                } else if (newCo < 0){
+                    reff.child("Climate").child("co").setValue("0").toString();
+
+                }
+
+
+
                 mGv_humid.setTargetValue(Float.parseFloat(humidity));
                 mGv_temp.setTargetValue(Float.parseFloat(temperature));
 
-                // send a notification
 
+                // send a notification
+/*                try {
+                    mGv_co.setTargetValue(Float.parseFloat(co));
+                    if (newCo > 100){
+                        reff.child("Climate").child("co").setValue(100);
+                    }
+
+                } catch (IndexOutOfBoundsException e){
+                    System.out.println("CO IS TOO HIGH!");
+                }*/
+
+
+/*
                 if(Float.parseFloat((temperature)) > 25){
                     Toast.makeText(getActivity(),"It is too hot!",Toast.LENGTH_SHORT).show();
                 }
@@ -121,6 +145,7 @@ public class MainPageFragment extends Fragment {
                     Toast.makeText(getActivity(),"high level!",Toast.LENGTH_SHORT).show();
                     mGv_co.setTargetValue(Float.parseFloat(temperature));
                 }
+*/
 
 
             }
