@@ -19,13 +19,8 @@ public class TempClickedFragment extends Fragment {
 
 
     private TextView tempText;
-    private Button chartButton;
+    //private Button chartButton;
 
-    private GaugeClickedListener listener;
-
-    public interface GaugeClickedListener {
-        void onInputGaugeClickedSent(CharSequence input);
-    }
 
 
     @Override
@@ -53,26 +48,7 @@ public class TempClickedFragment extends Fragment {
         return view;
     }
 
-    public void updateTextView(CharSequence newText){
-        tempText.setText(newText);
-    }
 
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof GaugeClickedListener){
-            listener = (GaugeClickedListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + "Must implement GaugeClickedListener");
-        }
-    }
-
-
-
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
-    }
 
 
 

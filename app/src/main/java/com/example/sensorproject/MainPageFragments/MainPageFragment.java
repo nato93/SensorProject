@@ -29,11 +29,6 @@ public class MainPageFragment extends Fragment {
     DatabaseReference reff;
     static TextView infoText;
 
-    private MainPageListener listener;
-
-    public interface MainPageListener {
-        void onInputMainPageFragmentSent(CharSequence input);
-    }
 
     public MainPageFragment() {
         // Required empty public constructor
@@ -73,6 +68,7 @@ public class MainPageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         reff = FirebaseDatabase.getInstance().getReference().child("Climate");
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -173,6 +169,14 @@ public class MainPageFragment extends Fragment {
                 //updateTextView(infoText);
 
                 Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
+
+
+                try {
+
+                }catch (IndexOutOfBoundsException e){
+                    Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
+
+                }
 
 
 

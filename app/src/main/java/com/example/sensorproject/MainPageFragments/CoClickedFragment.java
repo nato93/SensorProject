@@ -20,13 +20,8 @@ public class CoClickedFragment extends Fragment {
 
 
     private TextView coText;
-    private Button chartButton;
+    //private Button chartButton;
 
-    private GaugeClickedListener listener;
-
-    public interface GaugeClickedListener {
-        void onInputGaugeClickedSent(CharSequence input);
-    }
 
 
     @Override
