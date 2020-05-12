@@ -102,15 +102,30 @@ public class MainPageFragment extends Fragment {
                 String temperature = dataSnapshot.child("Temperature").getValue().toString();
                 String humidity = dataSnapshot.child("Humidity").getValue().toString();
 
+
+                mGv_co.setTargetValue(Float.parseFloat("0"));
+
                 //Converting strings into
-                int newCo = Integer.parseInt(co);
+               int newCo = Integer.parseInt(co);
 
 
-                if (newCo < 100){
-                    reff.child("Climate").child("co").setValue("100").toString();
+
+                if (newCo > 100){
+                    newCo = 99;
+                    reff.child("Climate").child("co").setValue(newCo).toString();
+                    mGv_co.setTargetValue(Float.parseFloat("99"));
+                    Toast.makeText(getActivity(),"WARNING: CO is above 99!",Toast.LENGTH_SHORT).show();
                 } else if (newCo < 0){
-                    reff.child("Climate").child("co").setValue("0").toString();
+                    newCo = 1;
+                    reff.child("Climate").child("co").setValue(newCo).toString();
+                    mGv_co.setTargetValue(Float.parseFloat("1"));
+                    Toast.makeText(getActivity(),"WARNING: CO is below 1!",Toast.LENGTH_SHORT).show();
 
+                    //newCo = 0;
+                    //reff.child("Climate").child("co").setValue(newCo).toString();
+
+                } else {
+                    mGv_co.setTargetValue(Float.parseFloat(co));
                 }
 
 

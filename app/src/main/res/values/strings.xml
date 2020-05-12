@@ -23,9 +23,9 @@
     <string name="mForgotPasswordLink">Forgot password</string>
     <string name="mLoginRememberCheckBox">Remember me</string>
 
-    <string name="mCoView">CO</string>
-    <string name="mTempView">Temperature</string>
-    <string name="mHumidView">Humidity</string>
+    <string name="mCoView">CO (PPM)</string>
+    <string name="mTempView">Temperature (°C)</string>
+    <string name="mHumidView">Humidity (%)</string>
 
     <string name="mCoInput"></string>
     <string name="mTempInput"></string>
