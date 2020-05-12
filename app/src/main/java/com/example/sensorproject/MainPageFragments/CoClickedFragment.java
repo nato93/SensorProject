@@ -19,7 +19,7 @@ import com.example.sensorproject.R;
 public class CoClickedFragment extends Fragment {
 
 
-    private TextView coText;
+    private TextView coText, coView;
     //private Button chartButton;
 
 
@@ -33,6 +33,7 @@ public class CoClickedFragment extends Fragment {
 
 
         coText = view.findViewById(R.id.mInfoText);
+        coView = view.findViewById(R.id.mCoView);
 
         coText.setText(R.string.mCoInfo);
 

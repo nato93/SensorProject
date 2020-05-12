@@ -18,7 +18,7 @@ import com.example.sensorproject.R;
 public class HumClickedFragment extends Fragment {
 
 
-    private TextView humText;
+    private TextView humText, humView;
     private Button chartButton;
 
 
@@ -32,6 +32,7 @@ public class HumClickedFragment extends Fragment {
         configureImageButton(view);
 
         humText = view.findViewById(R.id.mInfoText);
+        humView = view.findViewById(R.id.mHumView);
 
         humText.setText(R.string.mHumidityInfo);
 

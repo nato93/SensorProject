@@ -85,8 +85,8 @@ public class MainPageFragment extends Fragment {
         infoText = view.findViewById(R.id.mInfoText);
 
         final GaugeView mGv_co = view.findViewById(R.id.gv_co);
-        final GaugeView mGv_temp = view.findViewById(R.id.gv_humid);
-        final GaugeView mGv_humid = view.findViewById(R.id.gv_temp);
+        final GaugeView mGv_temp = view.findViewById(R.id.gv_temp);
+        final GaugeView mGv_humid = view.findViewById(R.id.gv_humid);
 
         mGv_co.setShowRangeValues(true);
         mGv_co.setTargetValue(0);

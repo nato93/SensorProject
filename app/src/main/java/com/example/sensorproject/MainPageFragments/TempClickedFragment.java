@@ -18,7 +18,7 @@ import com.example.sensorproject.R;
 public class TempClickedFragment extends Fragment {
 
 
-    private TextView tempText;
+    private TextView tempText, tempView;
     //private Button chartButton;
 
 
@@ -32,6 +32,7 @@ public class TempClickedFragment extends Fragment {
 
 
         tempText = view.findViewById(R.id.mInfoText);
+        tempView = view.findViewById(R.id.mTempView);
 
         tempText.setText(R.string.mTemperatureInfo);
 
