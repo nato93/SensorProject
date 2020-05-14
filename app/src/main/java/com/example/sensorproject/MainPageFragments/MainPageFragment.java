@@ -103,19 +103,23 @@ public class MainPageFragment extends Fragment {
                 String humidity = dataSnapshot.child("Humidity").getValue().toString();
 
 
-                mGv_co.setTargetValue(Float.parseFloat("0"));
+                //mGv_co.setTargetValue(Float.parseFloat("0"));
 
+                //mGv_co.setTargetValue(Float.parseFloat(co));
                 //Converting strings into
-               int newCo = Integer.parseInt(co);
+               //Double newCo = Double.parseDouble(co);
+                //mGv_co.setTargetValue(Float.parseFloat(co));
+
+                double newCo = Float.parseFloat(co);
 
 
                 if (newCo >= 100){
-                    newCo = 99;
+                    newCo = 99.0;
                     reff.child("Climate").child("co").setValue(newCo).toString();
                     mGv_co.setTargetValue(Float.parseFloat("99"));
                     Toast.makeText(getActivity(),"WARNING: CO is above 99!",Toast.LENGTH_SHORT).show();
                 } else if (newCo <= 0) {
-                    newCo = 1;
+                    newCo = 1.0;
                     reff.child("Climate").child("co").setValue(newCo).toString();
                     mGv_co.setTargetValue(Float.parseFloat("1"));
                     Toast.makeText(getActivity(), "CO is below 1!", Toast.LENGTH_SHORT).show();
@@ -124,9 +128,11 @@ public class MainPageFragment extends Fragment {
                     Toast.makeText(getActivity(), "CO is in optimal range!", Toast.LENGTH_SHORT).show();
                     //newCo = 0;
                     //reff.child("Climate").child("co").setValue(newCo).toString();
+                    mGv_co.setTargetValue(Float.parseFloat(co));
 
                 } else {
                     mGv_co.setTargetValue(Float.parseFloat(co));
+                    Toast.makeText(getActivity(), "it goes to the else ", Toast.LENGTH_SHORT).show();
                 }
 
 
