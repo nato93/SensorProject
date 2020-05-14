@@ -109,8 +109,6 @@ public class MainPageFragment extends Fragment {
                int newCo = Integer.parseInt(co);
 
 
-
-
                 if (newCo > 100){
                     newCo = 99;
                     reff.child("Climate").child("co").setValue(newCo).toString();
@@ -209,16 +207,14 @@ public class MainPageFragment extends Fragment {
                 //infoText.setText(R.string.mHumidityInfo);
                 //updateTextView(infoText);
 
-                Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
-
-
+                //Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
+/*
                 try {
 
                 }catch (IndexOutOfBoundsException e){
                     Toast.makeText(getActivity(), "YOU CLICKED HUMIDITY", Toast.LENGTH_SHORT).show();
 
-                }
-
+                }*/
 
 
             }

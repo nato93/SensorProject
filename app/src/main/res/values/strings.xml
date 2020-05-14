@@ -42,39 +42,36 @@
     <string name="mTemperatureInfo">
 
 
-        <b>Red zone:</b> below 10 or above 30 degrees way too cold or hot
+        <b>Red zone:</b> below 10 too cold, above 30 too hot. Way too cold or hot
         \n
-        <b>Yellow zone:</b> between 10-21 or 25-30 degrees, bit too hot or cold
+        <b>Yellow zone:</b> between 10-21 or 25-30 degrees. A bit too hot or cold
         \n
-       <b>Green zone:</b> between 21-25 degrees, optimal
+       <b>Green zone:</b> between 21-25 degrees. Optimal
         \n
         \n
         <b>Description:</b>
         \n
+        <b>Red zone:</b> Too hot or cold to concentrate and will impact the body in its
+        ability to function and concentrate properly
         \n
-        <b>Red zone: Too hot or cold to concentrate and will impact the body in its
-        ability to function and concentrate properly</b>
+        <b>Yellow zone:</b> a bit too hot or cold, you will be able to feel a slight decrease in concentration and
+        energy levels.
         \n
-        <b>Yellow zone: a bit too hot or cold, you will be able to feel a slight decrease in concentration and
-        energy levels.</b>
-        \n
-        <b>Green zone: Optimal and nothing to worry about.</b>
+        <b>Green zone:</b> Body will function optimally.
         </string>
 
 
     <string name="mHumidityInfo">
 
-        <b>Red zone:</b> above 60% or less than 30% humidity, way too humid or dry
+        <b>Red zone:</b> above 60% too humid, below 30% too dry, CRITICAL
         \n
-        <b>Yellow zone:</b> between 30-45% too dry, between 50-60% too humid.
+        <b>Yellow zone:</b> between 30-45% too dry, between 50-60% too humid, WARNING.
         \n
-        <b>Green zone:</b> between 45-50% humidity, optimal
-        \n
-        \n
-        <br><b>Description:</b></br>
+        <b>Green zone:</b> between 45-50% humidity, OPTIMAL
         \n
         \n
-
+        <b>Description:</b>
+        \n
        <b> Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
         it can mean that the room is either too humid or too dry. Can cause
         growth of mold, funguses, dust mites, and other pests.
@@ -83,37 +80,30 @@
         red zone for an extended period of time try to increase your breaks
         from the room, or try to do something to fix it.
         \n
-        \n
         <b>Yellow zone:</b> it is either a bit too humid or dry. This wont have a huge affect on a healthy body,
         but people with asthma or respiratory diseases should not be in this room.
-        \n
         \n
         <b>Green zone:</b> Means that the humidity is perfect for optimal body function.
 
       </string>
 
     <string name="mCoInfo">
-        <b>Red zone:</b> above 90ppm, way too high co level CRITICAL
+        <b>Red zone:</b> above 90ppm, CRITICAL way too high co level
         \n
-        <b>Yellow zone:</b> between 70-90ppm, too high co level
+        <b>Yellow zone:</b> between 70-90ppm, WARNING too high co level
         \n
-        <b>Green zone:</b> between 1-70ppm, optimal
+        <b>Green zone:</b> between 1-70ppm, OPTIMAL
         \n
         \n
         <b>Description:</b>
         \n
-        \n
         <b>Red zone:</b> At sustained CO concentrations above 150 ppm,
         disorientation, unconsciousness, vomiting and death are possible.
         \n
-        \n
-
       <b>Yellow zone:</b> can increase risk of heart disease, cause headache, fatigue and nausea
         if it remains in this zone for an extended period of time, people with
         heart diseases might experience an increase in chest pain.
         \n
-        \n
-
         <b>Green zone:</b> Optimal and nothing to worry about.
 </string>
 
