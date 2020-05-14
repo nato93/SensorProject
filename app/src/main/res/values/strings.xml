@@ -57,7 +57,9 @@
         <b>Yellow zone:</b> a bit too hot or cold, you will be able to feel a slight decrease in concentration and
         energy levels.
         \n
-        <b>Green zone:</b> Body will function optimally.
+        <b>Green zone:</b> Optimal level, body will function normally.
+        \n
+        \n
         </string>
 
 
@@ -72,18 +74,18 @@
         \n
         <b>Description:</b>
         \n
-       <b> Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
+       <b>Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
         it can mean that the room is either too humid or too dry. Can cause
-        growth of mold, funguses, dust mites, and other pests.
-        Mold contributes to a number of diseases and thrives in humid
-        climates, generally above 60 percent. If the room continues to be in the
+        growth of mold.. If the room continues to be in the
         red zone for an extended period of time try to increase your breaks
-        from the room, or try to do something to fix it.
+        from the room.
         \n
         <b>Yellow zone:</b> it is either a bit too humid or dry. This wont have a huge affect on a healthy body,
         but people with asthma or respiratory diseases should not be in this room.
         \n
-        <b>Green zone:</b> Means that the humidity is perfect for optimal body function.
+        <b>Green zone:</b> Optimal level, body will function normally.
+        \n
+        \n
 
       </string>
 
@@ -104,7 +106,9 @@
         if it remains in this zone for an extended period of time, people with
         heart diseases might experience an increase in chest pain.
         \n
-        <b>Green zone:</b> Optimal and nothing to worry about.
+        <b>Green zone:</b> Optimal level, body will function normally.
+        \n
+        \n
 </string>
 
 
