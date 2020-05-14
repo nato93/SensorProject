@@ -43,63 +43,88 @@
 
 
         <b>Red zone:</b> below 10 or above 30 degrees way too cold or hot
-
-       <br> <b>Yellow zone:</b> between 10-21 or 25-30 degrees, bit too hot or cold</br>
-
-       <br> <b>Green zone:</b> between 21-25 degrees, optimal</br>
-
-        <br><b>Description:</b></br>
-
-
-        <br><b>Red zone: Too hot or cold to concentrate and will impact the body in its
-        ability to function and concentrate properly</b></br>
-
-        <br><b>Yellow zone: a bit too hot or cold, you will be able to feel a slight decrease in concentration and
-        energy levels.</b></br>
-
-        <br><b>Green zone: Optimal and nothing to worry about.</b></br>
+        \n
+        \n
+        <b>Yellow zone:</b> between 10-21 or 25-30 degrees, bit too hot or cold
+        \n
+        \n
+       <b>Green zone:</b> between 21-25 degrees, optimal
+        \n
+        \n
+        <b>Description:</b>
+        \n
+        \n
+        <b>Red zone: Too hot or cold to concentrate and will impact the body in its
+        ability to function and concentrate properly</b>
+        \n
+        \n
+        <b>Yellow zone: a bit too hot or cold, you will be able to feel a slight decrease in concentration and
+        energy levels.</b>
+        \n
+        \n
+        <b>Green zone: Optimal and nothing to worry about.</b>
         </string>
 
 
     <string name="mHumidityInfo">
 
-        <br><b>Red zone:</b> above 60% or less than 30% humidity, way too humid or dry</br>
-        <br><b>Yellow zone:</b> between 30-45% or between 50-60% humidity, too humid or dry.</br>
-        <br><b>Green zone:</b> between 45-50% humidity, optimal</br>
+        <b>Red zone:</b> above 60% or less than 30% humidity, way too humid or dry
+        \n
+        \n
+        <b>Yellow zone:</b> between 30-45% or between 50-60% humidity, too humid or dry.
+        \n
+        \n
+        <b>Green zone:</b> between 45-50% humidity, optimal
+        \n
+        \n
 
         <br><b>Description:</b></br>
+        \n
+        \n
 
-       <br><b> Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
+       <b> Red zone:</b> the indoor climate has reached levels that wont be optimal for you,
         it can mean that the room is either too humid or too dry. Can cause
         growth of mold, funguses, dust mites, and other pests.
         Mold contributes to a number of diseases and thrives in humid
         climates, generally above 60 percent. If the room continues to be in the
         red zone for an extended period of time try to increase your breaks
-        from the room, or try to do something to fix it.</br>
-
-        <br><b>Yellow zone:</b> it is either a bit too humid or dry. This wont have a huge affect on a healthy body,
-        but people with asthma or respiratory diseases should not be in this room.</br>
-
+        from the room, or try to do something to fix it.
+        \n
+        \n
+        <b>Yellow zone:</b> it is either a bit too humid or dry. This wont have a huge affect on a healthy body,
+        but people with asthma or respiratory diseases should not be in this room.
+        \n
+        \n
         <br><b>Green zone:</b> Means that the humidity is perfect for optimal body function.</br>
 
       </string>
 
     <string name="mCoInfo">
-        <b>Red zone:</b> above 90ppm, way too high co level CRITICAL\n
-        <b>Yellow zone:</b> between 70-90ppm, too high co level\n
-        <b>Green zone:</b> between 1-70ppm, optimal\n
-        <b>Description:</b>\n
-
-
+        <b>Red zone:</b> above 90ppm, way too high co level CRITICAL
+        \n
+        \n
+        <b>Yellow zone:</b> between 70-90ppm, too high co level
+        \n
+        \n
+        <b>Green zone:</b> between 1-70ppm, optimal
+        \n
+        \n
+        <b>Description:</b>
+        \n
+        \n
 
         <b>Red zone:</b> At sustained CO concentrations above 150 ppm,
         disorientation, unconsciousness, vomiting and death are possible.
+        \n
+        \n
 
       <b>Yellow zone:</b> can increase risk of heart disease, cause headache, fatigue and nausea
         if it remains in this zone for an extended period of time, people with
         heart diseases might experience an increase in chest pain.
+        \n
+        \n
 
-        <br><b>Green zone:</b> Optimal and nothing to worry about.</br>
+        <b>Green zone:</b> Optimal and nothing to worry about.
 </string>
 
 

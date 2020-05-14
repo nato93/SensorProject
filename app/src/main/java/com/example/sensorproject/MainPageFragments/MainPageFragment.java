@@ -110,6 +110,7 @@ public class MainPageFragment extends Fragment {
 
 
 
+
                 if (newCo > 100){
                     newCo = 99;
                     reff.child("Climate").child("co").setValue(newCo).toString();
