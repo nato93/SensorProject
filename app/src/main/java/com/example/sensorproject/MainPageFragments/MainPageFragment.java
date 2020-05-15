@@ -145,6 +145,9 @@ public class MainPageFragment extends Fragment {
                 if (newTemp >= 30) {
                     Toast.makeText(getActivity(), "WARNING: it is too hot!", Toast.LENGTH_SHORT).show();
                 }
+                if (newTemp >= 21 && newTemp <= 25) {
+                    Toast.makeText(getActivity(), "Temperature is in optimal range!", Toast.LENGTH_SHORT).show();
+                }
 
 
                 if (newHum >= 60){
@@ -152,6 +155,9 @@ public class MainPageFragment extends Fragment {
                 }
                 if (newHum <= 30) {
                     Toast.makeText(getActivity(), "WARNING: it is too dry!", Toast.LENGTH_SHORT).show();
+                }
+                if (newHum >= 45 && newHum <= 50 ) {
+                    Toast.makeText(getActivity(), "Humidity is in optimal range!", Toast.LENGTH_SHORT).show();
                 }
 
 
