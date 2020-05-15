@@ -70,7 +70,6 @@
         gauge:showOuterShadow="false"
         gauge:showRangeText="true"
         gauge:showRanges="true"
-        gauge:textUnit="°C"
         gauge:showScale="true"
         gauge:subdivisions="1"
         gauge:textValueSize="0.15" />
