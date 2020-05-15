@@ -111,6 +111,8 @@ public class MainPageFragment extends Fragment {
                 //mGv_co.setTargetValue(Float.parseFloat(co));
 
                 double newCo = Float.parseFloat(co);
+                double newTemp = Float.parseFloat(temperature);
+                double newHum = Float.parseFloat(humidity);
 
 
                 if (newCo >= 100){
@@ -122,7 +124,7 @@ public class MainPageFragment extends Fragment {
                     newCo = 1.0;
                     reff.child("Climate").child("co").setValue(newCo).toString();
                     mGv_co.setTargetValue(Float.parseFloat("1"));
-                    Toast.makeText(getActivity(), "CO is below 1!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "There's no CO in the air!", Toast.LENGTH_SHORT).show();
 
                 } else if (newCo <= 70){
                     Toast.makeText(getActivity(), "CO is in optimal range!", Toast.LENGTH_SHORT).show();
@@ -132,7 +134,24 @@ public class MainPageFragment extends Fragment {
 
                 } else {
                     mGv_co.setTargetValue(Float.parseFloat(co));
-                    Toast.makeText(getActivity(), "it goes to the else ", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "it goes to the else ", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+                if (newTemp <= 10){
+                    Toast.makeText(getActivity(),"WARNING: it is too cold!",Toast.LENGTH_SHORT).show();
+                }
+                if (newTemp >= 30) {
+                    Toast.makeText(getActivity(), "WARNING: it is too hot!", Toast.LENGTH_SHORT).show();
+                }
+
+
+                if (newHum >= 60){
+                    Toast.makeText(getActivity(),"WARNING: it is too humid!",Toast.LENGTH_SHORT).show();
+                }
+                if (newHum <= 30) {
+                    Toast.makeText(getActivity(), "WARNING: it is too dry!", Toast.LENGTH_SHORT).show();
                 }
 
 
