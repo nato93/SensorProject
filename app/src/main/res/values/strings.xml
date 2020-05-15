@@ -42,7 +42,7 @@
     <string name="mTemperatureInfo">
 
 
-        <b>Red zone:</b> below 10 too cold, above 30 too hot. Way too cold or hot
+        <b>Red zone:</b> below 10 too cold, above 30 too hot. WARNING Way too cold or hot
         \n
         <b>Yellow zone:</b> between 10-21 or 25-30 degrees. A bit too hot or cold
         \n
@@ -65,11 +65,11 @@
 
     <string name="mHumidityInfo">
 
-        <b>Red zone:</b> above 60% too humid, below 30% too dry, CRITICAL
+        <b>Red zone:</b> above 60% too humid, below 30% too dry, WARNING
         \n
-        <b>Yellow zone:</b> between 30-45% too dry, between 50-60% too humid, WARNING.
+        <b>Yellow zone:</b> between 30-45% too dry, between 50-60% too humid.
         \n
-        <b>Green zone:</b> between 45-50% humidity, OPTIMAL
+        <b>Green zone:</b> between 45-50% humidity, optimal
         \n
         \n
         <b>Description:</b>
@@ -90,11 +90,11 @@
       </string>
 
     <string name="mCoInfo">
-        <b>Red zone:</b> above 90ppm, CRITICAL way too high co level
+        <b>Red zone:</b> above 90ppm, WARNING way too high co level
         \n
-        <b>Yellow zone:</b> between 70-90ppm, WARNING too high co level
+        <b>Yellow zone:</b> between 70-90ppm, a bit too high co level
         \n
-        <b>Green zone:</b> between 1-70ppm, OPTIMAL
+        <b>Green zone:</b> between 1-70ppm, optimal
         \n
         \n
         <b>Description:</b>
